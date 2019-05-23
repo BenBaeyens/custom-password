@@ -13,6 +13,7 @@ public class Main : MonoBehaviour {
     public GameObject dontsteal;
     public GameObject passwordiscorrect;
 
+    
     private void Start() {
         if (PlayerPrefs.GetInt("passwordisright") == 1)
             passwordisright = true;
@@ -39,10 +40,6 @@ public class Main : MonoBehaviour {
 
         if (!focussed && !passwordisright)
         {
-            UnityEngine.Debug.Log("test");
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = "CustomPassword";
-            Process.Start(startInfo);
             Application.Quit();
         }
 
@@ -66,5 +63,6 @@ public class Main : MonoBehaviour {
         PlayerPrefs.SetInt("passwordisright", 0);
         passwordiscorrect.SetActive(false);
         dontsteal.SetActive(true);
+        passwordbar.text = "";
     }
 }
