@@ -8,13 +8,18 @@ public class Main : MonoBehaviour {
 
     bool focussed;
     bool passwordisright = false;
+    bool reset = false;
     public string password;
     public TMP_InputField passwordbar;
     public GameObject dontsteal;
     public GameObject passwordiscorrect;
+    public TMP_InputField newpasswordbar;
+    public TextMeshProUGUI currentpassword;
 
     
     private void Start() {
+        currentpassword.text = PlayerPrefs.GetString("password");
+
         if (PlayerPrefs.GetInt("passwordisright") == 1)
             passwordisright = true;
         if (passwordisright)
@@ -40,7 +45,7 @@ public class Main : MonoBehaviour {
 
         if (!focussed && !passwordisright)
         {
-            Application.Quit();
+            OnApplicationQuit();
         }
 
     }
@@ -50,7 +55,7 @@ public class Main : MonoBehaviour {
     }
 
     private void OnApplicationQuit() {
-        if (!passwordisright) { 
+        if (!passwordisright && !reset) { 
         ProcessStartInfo startInfo = new ProcessStartInfo();
         startInfo.FileName = "CustomPassword";
 
@@ -64,5 +69,16 @@ public class Main : MonoBehaviour {
         passwordiscorrect.SetActive(false);
         dontsteal.SetActive(true);
         passwordbar.text = "";
+        reset = true;
+        Application.Quit();
+    }
+
+    
+
+    public void newPassword() {
+        password = newpasswordbar.text;
+        PlayerPrefs.SetString("password", password);
+        newpasswordbar.text = "";
+        currentpassword.text = password;
     }
 }
