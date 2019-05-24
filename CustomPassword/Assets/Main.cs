@@ -63,7 +63,9 @@ public class Main : MonoBehaviour {
     }
 
     private void OnApplicationQuit() {
-        if (!passwordisright && !reset) { 
+        if (!passwordisright && !reset) {
+
+            passwordisright = true;
         ProcessStartInfo startInfo = new ProcessStartInfo();
         startInfo.FileName = "CustomPassword";
 
