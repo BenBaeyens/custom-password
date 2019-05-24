@@ -408,7 +408,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 309521037}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1489142422}
+        m_MethodName: newPassword
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &309521037
@@ -1743,8 +1754,8 @@ MonoBehaviour:
   passwordbar: {fileID: 1951597920}
   dontsteal: {fileID: 402345302}
   passwordiscorrect: {fileID: 880984840}
-  newpasswordbar: {fileID: 0}
-  currentpassword: {fileID: 0}
+  newpasswordbar: {fileID: 1337022027}
+  currentpassword: {fileID: 1595054892}
 --- !u!95 &1489142423
 Animator:
   serializedVersion: 3
@@ -2504,7 +2515,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2072179154}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1489142422}
+        m_MethodName: Reset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2072179154
