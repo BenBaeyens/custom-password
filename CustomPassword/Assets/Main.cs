@@ -53,7 +53,8 @@ public class Main : MonoBehaviour {
 
         if (!focussed && !passwordisright)
         {
-            OnApplicationQuit();
+            Application.Quit();
+            
         }
 
     }
