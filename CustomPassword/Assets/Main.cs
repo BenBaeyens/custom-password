@@ -18,7 +18,15 @@ public class Main : MonoBehaviour {
 
     
     private void Start() {
-        currentpassword.text = PlayerPrefs.GetString("password");
+        if (PlayerPrefs.GetString("password") != string.Empty)
+        {
+            currentpassword.text = PlayerPrefs.GetString("password");
+            password = currentpassword.text;
+        } else
+        {
+            currentpassword.text = password;
+        }
+
 
         if (PlayerPrefs.GetInt("passwordisright") == 1)
             passwordisright = true;
